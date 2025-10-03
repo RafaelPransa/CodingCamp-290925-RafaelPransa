@@ -1,0 +1,183 @@
+/* Reset */
+button {
+    border: none;
+}
+
+h5 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: #333A49;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #526ca4;
+}
+
+.container h1 {
+    color: #B3C5EF;
+    font-weight: 600;
+}
+
+.container form {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.container form input {
+    padding: 10px;
+    height: 40px;
+    width: 200px;
+    box-sizing: border-box;
+    border: none;
+    outline: 1px solid #828DF8;
+    border-radius: 6px;
+    background-color: #0F1729;
+    color: #7B8AAC;
+    font-weight: 600;
+}
+
+.container form input[type="text"]::placeholder {
+    color:#7B8AAC;
+}
+
+.container form input[type="date"] {
+    color: #7B8AAC;
+}
+
+.container form input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 1; /* Pastikan opacity penuh */
+    cursor: pointer; /* Pastikan kursor berubah saat dihover */
+}
+
+.container form button {
+    padding: 6px 18px;
+    background-color: #828DF8;
+    border-radius: 6px;
+    font-size: 24px;
+}
+
+.container .function {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .function button {
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 10px;
+}
+
+.container .function .btn-filter {
+    background-color: #1D283A;
+    color: #578ac8;
+    font-weight: 600;
+}
+
+.container .function .btn-delete {
+    background-color: #828DF8;
+    color: #0E1525;
+    font-weight: 600;
+}
+
+.container .data-todo-list {
+    margin-top: 1rem;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.container .data-todo-list .header-data-todo-list {
+    display: grid; /* UBAH: Dari flex menjadi grid */
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* Harus sama persis dengan .data-row */
+    column-gap: 50px;
+    align-items: center; /* Untuk menyejajarkan vertikal jika header memiliki tinggi berbeda */
+    padding: 15px;
+    background-color: #0E1525;
+    color: #B3C5E8;
+}
+
+.container .data-todo-list .data-contents {
+    background-color: #0F1729;
+    color: #B3C5E8;
+    padding: 15px;
+}
+
+/* --- Tambahkan ini di bagian bawah style.css Anda --- */
+
+/* Gaya untuk setiap baris data */
+.container .data-todo-list .data-contents {
+    background-color: #0F1729;
+    color: #B3C5E8;
+    /* Ubah padding menjadi 0 agar baris data bisa memiliki padding sendiri */
+    padding: 0; 
+}
+
+.container .data-todo-list .data-contents h5 {
+    padding: 15px; /* Tambahkan padding jika "No task found" muncul */
+}
+
+.data-row {
+    display: grid;
+    /* Buat 4 kolom yang sesuai dengan header: Task, Due Date, Status, Actions */
+    grid-template-columns: 2fr 1fr 1fr 1fr; 
+    column-gap: 50px;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #1d283a; /* Garis pemisah antar baris */
+}
+
+/* Gaya saat tugas selesai */
+.data-row.completed {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+.data-row .task-actions button {
+    background-color: #f88282; /* Warna merah untuk tombol hapus */
+    color: #0E1525;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.data-row .task-status {
+    display: flex;
+    align-items: center; /* PENTING: Menyejajarkan checkbox dan span di tengah vertikal */
+    justify-content: center; /* Opsional: Menarik konten ke tengah horizontal kolom */
+    gap: 5px;
+    height: 100%; /* Pastikan div ini mengisi seluruh tinggi grid cell */
+}
+
+.data-row .task-status input[type="checkbox"] {
+    /* Reset style input agar tidak terpengaruh oleh style input form di atas */
+    all: unset; 
+    appearance: checkbox;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #828DF8;
+    border-radius: 3px;
+    background-color: #0E1525;
+    cursor: pointer;
+}
+
+.data-row .task-status input[type="checkbox"]:checked {
+    background-color: #828DF8;
+}

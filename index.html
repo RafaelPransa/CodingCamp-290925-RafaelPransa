@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Percobaan To Do List</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>ToDo List</h1>
+      <form action="">
+        <input type="text" placeholder="Add a todo..." id="todo-input" />
+
+        <input type="date" name="date" id="date-input" />
+        <button type="submit">+</button>
+      </form>
+      <div class="function">
+        <button type="button" class="btn-filter">FILTER</button>
+        <button type="button" class="btn-delete">DELETE ALL</button>
+      </div>
+      <div class="data-todo-list">
+        <div class="header-data-todo-list">
+          <h5>Task</h5>
+          <h5>Due Date</h5>
+          <h5>Due Status</h5>
+          <h5>Actions</h5>
+        </div>
+        <div class="data-contents"></div>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
